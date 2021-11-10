@@ -1,11 +1,30 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 
+import 'dart:math';
+
 void main(List<String> arguments) {
-  const people = ['Chris', 'Tiffani', 'Pablo'];
-  people.forEach((person) => print(youAreWonderful(person)));
-  print(add(13, 67));
+  print(isPrime(7));
+  print(isPrime(12));
+  // square the input of 2 four times
+  print(repeatTask(4, 2, (number) => number * number));
 }
 
-final youAreWonderful = (String name) => 'You are wonderful, $name';
+bool isPrime(int number) {
+  for (var i = 2; i < sqrt(number); i++) {
+    if (number % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
-int add(int a, int b) => a + b;
+/// Repeat a given task on input for times number of times
+int repeatTask(int times, int input, Function task) {
+  int result = input;
+  while (times > 0) {
+    result = task(input);
+    input = result;
+    times--;
+  }
+  return result;
+}
