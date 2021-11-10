@@ -5,12 +5,12 @@ void main(List<String> arguments) {
   helloPersonAndPet('Fluffy', 'Chris');
   print(fullName('Ray', 'Wenderlich'));
   print(fullName('Albert', 'Einstein', 'Professor'));
-  print(withinTolerance(5));
-  print(withinTolerance(15));
-  print(withinTolerance(9, min: 7));
-  print(withinTolerance(9, max: 8));
-  print(withinTolerance(9, min: 7, max: 11));
-  print(withinTolerance(9, max: 11, min: 7));
+  print(withinTolerance(value: 5));
+  print(withinTolerance(value: 15));
+  print(withinTolerance(value: 9, min: 7));
+  print(withinTolerance(value: 9, max: 8));
+  print(withinTolerance(value: 9, min: 7, max: 11));
+  print(withinTolerance(value: 9, max: 11, min: 7));
 }
 
 String compliment(int number) {
@@ -29,6 +29,10 @@ String fullName(String first, String last, [String? title]) {
   }
 }
 
-bool withinTolerance(int value, {int min = 0, int max = 10}) {
+bool withinTolerance({
+  required int value,
+  int min = 0,
+  int max = 10,
+}) {
   return min <= value && value <= max;
 }
