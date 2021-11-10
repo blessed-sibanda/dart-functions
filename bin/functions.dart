@@ -3,8 +3,9 @@
 void main(List<String> arguments) {
   const people = ['Chris', 'Tiffani', 'Pablo'];
   people.forEach((person) => print(youAreWonderful(person)));
+  print(add(13, 67));
 }
 
-final youAreWonderful = (String name) {
-  return 'You are wonderful, $name';
-};
+final youAreWonderful = (String name) => 'You are wonderful, $name';
+
+int add(int a, int b) => a + b;
