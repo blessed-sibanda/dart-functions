@@ -11,6 +11,8 @@ void main(List<String> arguments) {
   print(withinTolerance(value: 9, max: 8));
   print(withinTolerance(value: 9, min: 7, max: 11));
   print(withinTolerance(value: 9, max: 11, min: 7));
+  print(youAreWonderful(name: 'Blessed', numberPeople: 5));
+  print(youAreWonderful(name: 'Chiedza'));
 }
 
 String compliment(int number) {
@@ -35,4 +37,8 @@ bool withinTolerance({
   int max = 10,
 }) {
   return min <= value && value <= max;
+}
+
+String youAreWonderful({required String name, int numberPeople = 30}) {
+  return "You're wonderful, $name. $numberPeople people think so.";
 }
